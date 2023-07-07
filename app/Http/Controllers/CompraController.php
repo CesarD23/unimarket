@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Compra;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 /**
  * Class CompraController
  * @package App\Http\Controllers
@@ -43,13 +42,36 @@ class CompraController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Compra::$rules);
+        $request->validate([
+            'nombre' => 'required',
+            'producto' => 'required',
+            'informacion' => 'required',
+            'contacto' => 'required',
+            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
 
-        $compra = Compra::create($request->all());
+        $compra = new Compra();
+        $compra->nombre = $request->input('nombre');
+        $compra->producto = $request->input('producto');
+        $compra->informacion = $request->input('informacion');
+        $compra->contacto = $request->input('contacto');
+
+        if ($request->hasFile('imagen')) {
+            $imagen = $request->file('imagen');
+            $nombreImagen = time() . '_' . $imagen->getClientOriginalName();
+
+            // Guardar la imagen en el almacenamiento
+            $imagen->storeAs('public/imagenes', $nombreImagen);
+
+            $compra->imagen = $nombreImagen;
+        }
+
+        $compra->save();
 
         return redirect()->route('compras.index')
             ->with('success', 'Compra created successfully.');
     }
+
 
     /**
      * Display the specified resource.

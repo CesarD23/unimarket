@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('producto');
             $table->string('informacion');
             $table->string('contacto');
+            $table->string('img');
             $table->timestamps();
         });
     }
