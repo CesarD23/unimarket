@@ -47,7 +47,7 @@ class CompraController extends Controller
             'producto' => 'required',
             'informacion' => 'required',
             'contacto' => 'required',
-            'imagen' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'imagen' => 'required|image|max:2048'
         ]);
 
         $compra = new Compra();
@@ -56,15 +56,16 @@ class CompraController extends Controller
         $compra->informacion = $request->input('informacion');
         $compra->contacto = $request->input('contacto');
 
-        if ($request->hasFile('imagen')) {
-            $imagen = $request->file('imagen');
-            $nombreImagen = time() . '_' . $imagen->getClientOriginalName();
+        // Ruta de almacén temporal
+        $compra->imagen =$request->file('imagen');
+        // Almacena en storage/app/public
+        $compra->imagen =$request->file('imagen')->store('');
 
-            // Guardar la imagen en el almacenamiento
-            $imagen->storeAs('public/imagenes', $nombreImagen);
-
-            $compra->imagen = $nombreImagen;
-        }
+        $compra->imagen =$request->file('imagenes')->store('imagenes');
+        //almacena en storage/app/public/images  En la carpeta public crea images
+         $compra->imagen =$request->file('fotografia')->store('public/images');
+         $imagenPublic = $request->file('imagen')->store('public/images');
+         $compra->imagen = Storage::url($imagenPublic);
 
         $compra->save();
 
