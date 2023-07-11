@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $producto
  * @property $informacion
  * @property $contacto
+ * @property $imagen
  * @property $created_at
  * @property $updated_at
  *
