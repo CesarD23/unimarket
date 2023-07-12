@@ -43,29 +43,28 @@ class CompraController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
-            'producto' => 'required',
-            'informacion' => 'required',
-            'contacto' => 'required',
             'imagen' => 'required|image|max:2048'
         ]);
 
         $compra = new Compra();
+
+
+if( $request->hasFile('imagen')){
+    $file=$request->file('imagen');
+    $destinationpath='images/';
+    $filename=time() . '-' . $file->getClientOriginalName();
+    $uploadSucces=$request->file('imagen')->move($destinationpath, $filename);
+    $compra->imagen =$destinationpath . $filename ;
+}
+
+        
         $compra->nombre = $request->input('nombre');
         $compra->producto = $request->input('producto');
         $compra->informacion = $request->input('informacion');
         $compra->contacto = $request->input('contacto');
 
-        // Ruta de almacén temporal
-        $compra->imagen =$request->file('imagen');
-        // Almacena en storage/app/public
-        $compra->imagen =$request->file('imagen')->store('');
 
-        $compra->imagen =$request->file('imagenes')->store('imagenes');
-        //almacena en storage/app/public/images  En la carpeta public crea images
-         $compra->imagen =$request->file('fotografia')->store('public/images');
-         $imagenPublic = $request->file('imagen')->store('public/images');
-         $compra->imagen = Storage::url($imagenPublic);
+       
 
         $compra->save();
 

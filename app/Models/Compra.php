@@ -38,6 +38,6 @@ class Compra extends Model
      */
     protected $fillable = ['nombre','producto','informacion','contacto'];
 
-
+protected $table= "compras";
 
 }

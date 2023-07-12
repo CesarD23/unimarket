@@ -50,9 +50,11 @@
                                             <td>{{ $compra->producto }}</td>
                                             <td>{{ $compra->informacion }}</td>
                                             <td>{{ $compra->contacto }}</td>
-                                            <td>{{ $compra->imagen }} </td>
                                             <td>
-                                                <form action="{{ route('compras.destroy', $compra->id) }}" method="POST">
+                                             <img src="{{asset($compra->imagen)}}" alt="{{$compra->title}}" class="img-fluid" width="150px">
+                                            </td>
+                                            <td>
+                                                <form action="{{ route('compras.destroy', $compra->id) }}" method="POST" >
                                                     <a class="btn btn-sm btn-primary" href="{{ route('compras.show', $compra->id) }}">
                                                         <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}
                                                     </a>
