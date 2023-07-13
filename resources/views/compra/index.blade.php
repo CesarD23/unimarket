@@ -33,7 +33,7 @@
                             @foreach ($compras as $compra)
                                 <div class="col-md-4 mb-4">
                                     <div class="card">
-                                        <img src="{{ asset($compra->imagen) }}" alt="{{ $compra->title }}" class="card-img-top">
+                                    <center><img src="{{ asset($compra->imagen) }}" alt="{{ $compra->title }}" class="card-img-top" style="max-width: 300px; height: 300px;"></center>
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $compra->nombre }}</h5>
                                             <p class="card-text">{{ $compra->producto }}</p>
