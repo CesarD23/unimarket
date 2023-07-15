@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompraController;
+use App\Http\Controllers\DulceController;
+use App\Http\Controllers\PapeleriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('compras', CompraController::class);
+Route::resource('dulces', DulceController::class);
+Route::resource('papelerias', PapeleriaController::class);

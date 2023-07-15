@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Comida
+    Papeleria
 @endsection
 
 @section('content')
@@ -12,11 +12,11 @@
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <span id="card_title">
-                                {{ __('Comida') }}
+                                {{ __('Papeleria') }}
                             </span>
 
                             <div class="ml-auto">
-                                <a href="{{ route('compras.create') }}" class="btn btn-primary btn-sm" data-placement="left">
+                                <a href="{{ route('papelerias.create') }}" class="btn btn-primary btn-sm" data-placement="left">
                                   {{ __('Crear nuevo producto') }}
                                 </a>
                             </div>
@@ -30,23 +30,23 @@
 
                     <div class="card-body">
                         <div class="row">
-                            @foreach ($compras as $compra)
+                            @foreach ($papelerias as $papeleria)
                                 <div class="col-md-4 mb-4">
                                     <div class="card">
-                                    <center><img src="{{ asset($compra->imagen) }}" alt="{{ $compra->title }}" class="card-img-top" style="max-width: 300px; height: 300px;"></center>
+                                    <center><img src="{{ asset($papeleria->imagen) }}" alt="{{ $papeleria->title }}" class="card-img-top" style="max-width: 300px; height: 300px;"></center>
                                         <div class="card-body">
-                                            <h5 class="card-title">{{ $compra->nombre }}</h5>
-                                            <p class="card-text">{{ $compra->producto }}</p>
-                                            <p class="card-text">{{ $compra->informacion }}</p>
-                                            <p class="card-text">{{ $compra->contacto }}</p>
+                                            <h5 class="card-title">{{ $papeleria->nombre }}</h5>
+                                            <p class="card-text">{{ $papeleria->informacion }}</p>
+                                            <p class="card-text">{{ $papeleria->producto }}</p>
+                                            <p class="card-text">{{ $papeleria->contacto }}</p>
                                             <div class="d-flex justify-content-between align-items-center">
-                                                <a href="{{ route('compras.show', $compra->id) }}" class="btn btn-primary">
+                                                <a href="{{ route('papelerias.show', $papeleria->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}
                                                 </a>
-                                                <a href="{{ route('compras.edit', $compra->id) }}" class="btn btn-success">
+                                                <a href="{{ route('papelerias.edit', $papeleria->id) }}" class="btn btn-success">
                                                     <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}
                                                 </a>
-                                                <form action="{{ route('compras.destroy', $compra->id) }}" method="POST">
+                                                <form action="{{ route('papelerias.destroy', $papeleria->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">
@@ -61,8 +61,9 @@
                         </div>
                     </div>
                 </div>
-                {!! $compras->links() !!}
+                {!! $papelerias->links() !!}
             </div>
         </div>
     </div>
 @endsection
+
