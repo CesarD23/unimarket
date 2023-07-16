@@ -70,7 +70,7 @@ $papeleria->contacto = $request->input('contacto');
         $papeleria->save();
 
         return redirect()->route('papelerias.index')
-            ->with('success', 'Pructo creado.');
+            ->with('success', 'Producto creado.');
     }
 
     /**

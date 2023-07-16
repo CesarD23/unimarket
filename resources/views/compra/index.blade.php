@@ -14,11 +14,12 @@
                             <span id="card_title">
                                 {{ __('Comida') }}
                             </span>
-
+                            @auth
                             <div class="ml-auto">
                                 <a href="{{ route('compras.create') }}" class="btn btn-primary btn-sm" data-placement="left">
                                   {{ __('Crear nuevo producto') }}
                                 </a>
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -43,6 +44,7 @@
                                                 <a href="{{ route('compras.show', $compra->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}
                                                 </a>
+                                                @auth
                                                 <a href="{{ route('compras.edit', $compra->id) }}" class="btn btn-success">
                                                     <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}
                                                 </a>
@@ -53,6 +55,7 @@
                                                         <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}
                                                     </button>
                                                 </form>
+                                                @endauth
                                             </div>
                                         </div>
                                     </div>

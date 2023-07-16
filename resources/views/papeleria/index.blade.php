@@ -16,9 +16,11 @@
                             </span>
 
                             <div class="ml-auto">
-                                <a href="{{ route('papelerias.create') }}" class="btn btn-primary btn-sm" data-placement="left">
-                                  {{ __('Crear nuevo producto') }}
-                                </a>
+                                @auth
+                                    <a href="{{ route('papelerias.create') }}" class="btn btn-primary btn-sm" data-placement="left">
+                                        {{ __('Crear nuevo producto') }}
+                                    </a>
+                                @endauth
                             </div>
                         </div>
                     </div>
@@ -33,7 +35,7 @@
                             @foreach ($papelerias as $papeleria)
                                 <div class="col-md-4 mb-4">
                                     <div class="card">
-                                    <center><img src="{{ asset($papeleria->imagen) }}" alt="{{ $papeleria->title }}" class="card-img-top" style="max-width: 300px; height: 300px;"></center>
+                                        <center><img src="{{ asset($papeleria->imagen) }}" alt="{{ $papeleria->title }}" class="card-img-top" style="max-width: 300px; height: 300px;"></center>
                                         <div class="card-body">
                                             <h5 class="card-title">{{ $papeleria->nombre }}</h5>
                                             <p class="card-text">{{ $papeleria->informacion }}</p>
@@ -43,16 +45,18 @@
                                                 <a href="{{ route('papelerias.show', $papeleria->id) }}" class="btn btn-primary">
                                                     <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}
                                                 </a>
-                                                <a href="{{ route('papelerias.edit', $papeleria->id) }}" class="btn btn-success">
-                                                    <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}
-                                                </a>
-                                                <form action="{{ route('papelerias.destroy', $papeleria->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">
-                                                        <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}
-                                                    </button>
-                                                </form>
+                                                @auth
+                                                    <a href="{{ route('papelerias.edit', $papeleria->id) }}" class="btn btn-success">
+                                                        <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}
+                                                    </a>
+                                                    <form action="{{ route('papelerias.destroy', $papeleria->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">
+                                                            <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}
+                                                        </button>
+                                                    </form>
+                                                @endauth
                                             </div>
                                         </div>
                                     </div>
@@ -66,4 +70,3 @@
         </div>
     </div>
 @endsection
-

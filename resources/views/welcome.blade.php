@@ -7,7 +7,7 @@
 
     <section class="py-5">
         <div class="container">
-           <center><h2>Unimarket </h2></center> 
+        <center><h1 style="font-family: 'Arial Black', sans-serif;">UNIMARKET</h1></center>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">

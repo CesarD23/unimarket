@@ -7,8 +7,8 @@
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('producto') }}
-            {{ Form::text('producto', $dulce->producto, ['class' => 'form-control' . ($errors->has('producto') ? ' is-invalid' : ''), 'placeholder' => 'Producto']) }}
+            {{ Form::label('Área') }}
+            {{ Form::text('producto', $dulce->producto, ['class' => 'form-control' . ($errors->has('producto') ? ' is-invalid' : ''), 'placeholder' => 'Área']) }}
             {!! $errors->first('producto', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
