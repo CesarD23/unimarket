@@ -29,6 +29,7 @@ Route::resource('compras', CompraController::class);
 Route::resource('dulces', DulceController::class);
 Route::resource('papelerias', PapeleriaController::class);
 Route::get('/contacto', [ContactController::class, 'show'])->name('contacto.show');
+Route::post('/contacto', [ContactController::class, 'store'])->name('contacto.store');
 
 
 

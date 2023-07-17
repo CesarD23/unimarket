@@ -70,7 +70,7 @@ if( $request->hasFile('imagen')){
         $dulce->save();
 
         return redirect()->route('dulces.index')
-            ->with('success', 'Duce creado.');
+            ->with('success', 'Dulce creado.');
     }
 
     /**
