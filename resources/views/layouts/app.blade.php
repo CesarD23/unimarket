@@ -37,7 +37,7 @@
                         <!-- Authentication Links -->
                         @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Inicio') }}</a>
+                                    <a class="nav-link" href="{{ url('/') }}">{{ __('Inicio') }}</a>
                                 </li>
                             @endif
                             @if (Route::has('register'))
