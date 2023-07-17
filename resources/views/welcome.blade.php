@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <header>
 
+    <header>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
     </header>
 
     <section class="py-5">
         <div class="container">
-        <center><h1 style="font-family: 'Arial Black', sans-serif;">UNIMARKET</h1></center>
+            <center><h1 style="font-family: 'Arial Black', sans-serif;">UNIMARKET</h1></center>
             <div class="row">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="images_welcome/food-image-1.jpg" class="card-img-top" alt="Food Image 1">
+                        <img src="{{ asset('images_welcome/food-image-1.jpg') }}" class="card-img-top" alt="Food Image 1">
                         <div class="card-body">
                             <h5 class="card-title">Alimentos</h5>
                             <p class="card-text">Alimentos que puedes encontrar en la universidad.</p>
@@ -21,7 +22,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="images_welcome/food-image-2.jpg" class="card-img-top" alt="Food Image 2">
+                        <img src="{{ asset('images_welcome/food-image-2.jpg') }}" class="card-img-top" alt="Food Image 2">
                         <div class="card-body">
                             <h5 class="card-title">Dulceria</h5>
                             <p class="card-text">Descripción del alimento 2.</p>
@@ -31,7 +32,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">
-                        <img src="images_welcome/food-image-3.jpg" class="card-img-top" alt="Food Image 3">
+                        <img src="{{ asset('images_welcome/food-image-3.jpg') }}" class="card-img-top" alt="Food Image 3">
                         <div class="card-body">
                             <h5 class="card-title">Papeleria</h5>
                             <p class="card-text">Descripción del alimento 3.</p>
@@ -44,5 +45,6 @@
             </div>
         </div>
     </section>
-    
+
+   
 @endsection
