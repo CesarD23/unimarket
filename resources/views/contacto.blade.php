@@ -31,7 +31,7 @@
                         <label for="asunto" class="colocar_asunto">Asunto
                             <span class="obligatorio">*</span>
                         </label>
-                        <input type="text" name="asunto" id="asunto" required="obligatorio" placeholder="Escribe un asunto">
+                        <input type="text" name="asunto" id="asunto" required="obligatorio" placeholder="Explicalo con menos de 30 palabras">
                     </p>
                     <button type="submit" name="store" id="enviar"><p>Enviar</p></button>
                     <p class="aviso">
