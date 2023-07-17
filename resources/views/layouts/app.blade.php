@@ -42,7 +42,7 @@
                             @endif
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Contactanos') }}</a>
+                                    <a class="nav-link" href="{{ route('contacto.show') }}">{{ __('Contactanos') }}</a>
                                 </li>
                             @endif
                         @guest

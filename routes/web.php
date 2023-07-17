@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\DulceController;
 use App\Http\Controllers\PapeleriaController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('compras', CompraController::class);
 Route::resource('dulces', DulceController::class);
 Route::resource('papelerias', PapeleriaController::class);
+Route::get('/contacto', [ContactController::class, 'show'])->name('contacto.show');
+
+
+
