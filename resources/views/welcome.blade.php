@@ -30,6 +30,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card">
                         <img src="{{ asset('images_welcome/food-image-3.jpg') }}" class="card-img-top" alt="Food Image 3">
