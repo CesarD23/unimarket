@@ -27,6 +27,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Dulceria</h5>
                             <p class="card-text">Descripción del alimento 2.</p>
+                            <img src="{{ asset('../images/mapache.png') }}" class="mapache-img" alt="Mapache">
                             <a href='dulces/' class="btn btn-primary">Descubrelos</a>
                         </div>
                     </div>
@@ -38,6 +39,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Papeleria</h5>
                             <p class="card-text">Descripción del alimento 3.</p>
+                            <img src="{{ asset('../images/mapache.png') }}" class="mapache-img" alt="Mapache">
                             <a href="papelerias/" class="btn btn-primary">Descubrelos</a>
                         </div>
                     </div>
