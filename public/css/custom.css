@@ -1,5 +1,27 @@
 body {
-    background-size: 500px; /* Ajusta el tamaño de la imagen según tus necesidades */
-    background-repeat: repeat;
-    background-position: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url('../images/imgfondo.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.card-body {
+    color: black; /* Cambia el color del texto si es necesario */
+}
+.mapache-img {
+    position: absolute;
+    right: 10px; /* Ajusta esto para la posición horizontal deseada */
+    top: 330px; /* Ajusta esto para la posición vertical deseada */
+    width: 70px; /* Ajusta el tamaño del mapache según tus necesidades */
+    height: auto; /* Esto mantiene la proporción del mapa según el ancho */
+}
+

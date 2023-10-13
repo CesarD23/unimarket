@@ -16,6 +16,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Alimentos</h5>
                             <p class="card-text">Alimentos que puedes encontrar en la universidad.</p>
+                            <img src="{{ asset('../images/mapache.png') }}" class="mapache-img" alt="Mapache">
                             <a href='compras/' class="btn btn-primary">Descubrelos</a>
                         </div>
                     </div>
